@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends "guest_book_base.html" %}
+
+{% block content %}
+    <div>请尽快留言吧：</div>
+
+    <form action="/guest_book_submit/" method="post">
+        <p>姓名: <input type="text" name="name"/></p>
+        <p>内容: <input type="text" name="content"/></p>
+        <input type="submit" value="Submit"/>
+    </form>
+
+    {% for item in list %}
+        <p>{{ item["name"] }}</p>
+    {% endfor %}
+
+{% endblock %}
